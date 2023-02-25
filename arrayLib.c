@@ -27,3 +27,23 @@ void array_random(int *A, int n) {
 		A[i] = rand() % 99;
 	}
 }
+
+void array_descending(int *A, int n) {
+
+	int j = 0;
+	for(int i = 0; i < n; i++) {
+
+		A[i] = j;
+		j += 7;
+	}
+}
+
+void array_growing(int *A, int n) {
+
+	int j = 100;
+	for(int i = 0; i < n; i++) {
+
+		A[i] = j;
+		j -= 4;
+	}
+}
