@@ -17,7 +17,10 @@ int select_sort(int* A, int n, int *M, int *C) {
 			}
 		}
 
-		swap(&A[i], &A[k], M);
+		if(k != i) {
+
+			swap(&A[i], &A[k], M);
+		}
 	}
 	return 0;
 }
