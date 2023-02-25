@@ -3,8 +3,9 @@
 #include <math.h>
 
 int select_sort(int *A, int n, int *M, int *C);
-int array_input(int *A, int n);
-int array_print(int *A, int n);
+void array_input(int *A, int n);
+void array_random(int *A, int n);
+void array_print(int *A, int n);
 
 int* A;
 int* M = 0;
@@ -54,22 +55,46 @@ int main (){
 
 	A = calloc(A_lenth, sizeof(int));
 
-	array_input(A, A_lenth);
-	printf("Start array:");
+	// array_input(A, A_lenth);
+	// printf("Start array:");
+	// array_print(A, A_lenth);
+	// printf("Control summ: %d\n", control_summ(A, A_lenth));
+	// printf("Series: %d\n", control_series(A, A_lenth));
+	// printf("\n");
+
+	// select_sort(A, A_lenth, M, C);
+	// printf("Sorted array:");
+	// array_print(A, A_lenth);
+	// printf("Control summ: %d\n", control_summ(A, A_lenth));
+	// printf("Series: %d\n", control_series(A, A_lenth));
+	// printf("\n");
+
+	// printf("Theory M: %d, C: %.0f\n", (3 * (A_lenth - 1)), (( pow(A_lenth, 2) - A_lenth) / 2));
+	// printf("My M: %d, C: %d\n", *M, *C);
+	// M = 0; C = 0;
+	// printf("\n");
+
+	array_random(A, A_lenth);
+	printf("Random array:");
 	array_print(A, A_lenth);
 	printf("Control summ: %d\n", control_summ(A, A_lenth));
 	printf("Series: %d\n", control_series(A, A_lenth));
+	printf("\n");
 
 	select_sort(A, A_lenth, M, C);
 	printf("Sorted array:");
 	array_print(A, A_lenth);
 	printf("Control summ: %d\n", control_summ(A, A_lenth));
 	printf("Series: %d\n", control_series(A, A_lenth));
+	printf("\n");
 
 	printf("Theory M: %d, C: %.0f\n", (3 * (A_lenth - 1)), (( pow(A_lenth, 2) - A_lenth) / 2));
 	printf("My M: %d, C: %d\n", *M, *C);
 	M = 0; C = 0;
+	printf("\n");
 
-	free(A);
+
+
+	free(A); free(M); free(C);
 	return 0;
 }
