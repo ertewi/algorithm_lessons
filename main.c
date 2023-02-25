@@ -5,6 +5,8 @@
 int select_sort(int *A, int n, int *M, int *C);
 void array_input(int *A, int n);
 void array_random(int *A, int n);
+void array_descending(int *A, int n);
+void array_growing(int *A, int n);
 void array_print(int *A, int n);
 
 int* A;
@@ -73,6 +75,11 @@ int main (){
 	// printf("My M: %d, C: %d\n", *M, *C);
 	// M = 0; C = 0;
 	// printf("\n");
+	
+	printf("------------------------------------------------------");
+	printf("\n");
+
+
 
 	array_random(A, A_lenth);
 	printf("Random array:");
@@ -90,7 +97,55 @@ int main (){
 
 	printf("Theory M: %d, C: %.0f\n", (3 * (A_lenth - 1)), (( pow(A_lenth, 2) - A_lenth) / 2));
 	printf("My M: %d, C: %d\n", *M, *C);
-	M = 0; C = 0;
+	*M = 0; *C = 0;
+	printf("\n");
+	printf("------------------------------------------------------");
+	printf("\n");
+
+
+
+	array_descending(A, A_lenth);
+	printf("Descending array:");
+	array_print(A, A_lenth);
+	printf("Control summ: %d\n", control_summ(A, A_lenth));
+	printf("Series: %d\n", control_series(A, A_lenth));
+	printf("\n");
+
+	select_sort(A, A_lenth, M, C);
+	printf("Sorted array:");
+	array_print(A, A_lenth);
+	printf("Control summ: %d\n", control_summ(A, A_lenth));
+	printf("Series: %d\n", control_series(A, A_lenth));
+	printf("\n");
+
+	printf("Theory M: %d, C: %.0f\n", (3 * (A_lenth - 1)), (( pow(A_lenth, 2) - A_lenth) / 2));
+	printf("My M: %d, C: %d\n", *M, *C);
+	*M = 0; *C = 0;
+	printf("\n");
+	printf("------------------------------------------------------");
+	printf("\n");
+
+
+
+	array_growing(A, A_lenth);
+	printf("Growing array:");
+	array_print(A, A_lenth);
+	printf("Control summ: %d\n", control_summ(A, A_lenth));
+	printf("Series: %d\n", control_series(A, A_lenth));
+	printf("\n");
+
+	select_sort(A, A_lenth, M, C);
+	printf("Sorted array:");
+	array_print(A, A_lenth);
+	printf("Control summ: %d\n", control_summ(A, A_lenth));
+	printf("Series: %d\n", control_series(A, A_lenth));
+	printf("\n");
+
+	printf("Theory M: %d, C: %.0f\n", (3 * (A_lenth - 1)), (( pow(A_lenth, 2) - A_lenth) / 2));
+	printf("My M: %d, C: %d\n", *M, *C);
+	*M = 0; *C = 0;
+	printf("\n");
+	printf("------------------------------------------------------");
 	printf("\n");
 
 
