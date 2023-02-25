@@ -16,7 +16,8 @@ int select_sort(int* A, int n, int *M, int *C) {
 				k = j;
 			}
 		}
-
+		
+		*C += 1;
 		if(k != i) {
 
 			swap(&A[i], &A[k], M);
