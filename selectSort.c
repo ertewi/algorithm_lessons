@@ -1,8 +1,8 @@
 #include <stdio.h>
 
-void swap(int *a, int *b);
+void swap(int *a, int *b, int *M);
 
-int select_sort(int* A, int n) {
+int select_sort(int* A, int n, int *M, int *C) {
 	int temp, j, k = 0;
 
 	for(int i = 0; i < n-1; i++) {
@@ -10,13 +10,14 @@ int select_sort(int* A, int n) {
 		k = i;
 		for(j = i + 1; j < n; j++) {
 
+			*C += 1;
 			if(A[j] < A[k]) {
 
 				k = j;
 			}
 		}
 
-		swap(&A[i], &A[k]);
+		swap(&A[i], &A[k], M);
 	}
 	return 0;
 }

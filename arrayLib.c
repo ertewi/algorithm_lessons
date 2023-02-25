@@ -15,4 +15,7 @@ void array_print(int *A, int n) {
 
 		printf(" %d", A[i]);
 	}
+	printf("\n");
 }
+
+void array_random(int *A, int n) {}
