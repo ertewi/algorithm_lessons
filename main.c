@@ -2,7 +2,8 @@
 #include <stdlib.h>
 #include <math.h>
 
-int select_sort(int *A, int n, int *M, int *C);
+void select_sort(int *A, int n, int *M, int *C);
+void bubble_sort(int *A, int n, int *M, int *C);
 void array_input(int *A, int n);
 void array_random(int *A, int n);
 void array_descending(int *A, int n);
@@ -57,6 +58,13 @@ int main (){
 
 	A = calloc(A_lenth, sizeof(int));
 
+	printf("------------------------------------------------------");
+	printf("\n");
+
+
+
+//SELECT SORT
+
 	// array_input(A, A_lenth);
 	// printf("Start array:");
 	// array_print(A, A_lenth);
@@ -75,78 +83,171 @@ int main (){
 	// printf("My M: %d, C: %d\n", *M, *C);
 	// M = 0; C = 0;
 	// printf("\n");
+	// printf("------------------------------------------------------");
+	// printf("\n");
 	
-	printf("------------------------------------------------------");
-	printf("\n");
+
+
+	// array_random(A, A_lenth);
+	// printf("Random array:");
+	// array_print(A, A_lenth);
+	// printf("Control summ: %d\n", control_summ(A, A_lenth));
+	// printf("Series: %d\n", control_series(A, A_lenth));
+	// printf("\n");
+
+	// select_sort(A, A_lenth, M, C);
+	// printf("Sorted array:");
+	// array_print(A, A_lenth);
+	// printf("Control summ: %d\n", control_summ(A, A_lenth));
+	// printf("Series: %d\n", control_series(A, A_lenth));
+	// printf("\n");
+
+	// printf("Theory M: %d, C: %.0f\n", (3 * (A_lenth - 1)), (( pow(A_lenth, 2) - A_lenth) / 2));
+	// printf("My M: %d, C: %d\n", *M, *C);
+	// *M = 0; *C = 0;
+	// printf("\n");
+	// printf("------------------------------------------------------");
+	// printf("\n");
 
 
 
-	array_random(A, A_lenth);
-	printf("Random array:");
-	array_print(A, A_lenth);
-	printf("Control summ: %d\n", control_summ(A, A_lenth));
-	printf("Series: %d\n", control_series(A, A_lenth));
-	printf("\n");
+	// array_descending(A, A_lenth);
+	// printf("Descending array:");
+	// array_print(A, A_lenth);
+	// printf("Control summ: %d\n", control_summ(A, A_lenth));
+	// printf("Series: %d\n", control_series(A, A_lenth));
+	// printf("\n");
 
-	select_sort(A, A_lenth, M, C);
-	printf("Sorted array:");
-	array_print(A, A_lenth);
-	printf("Control summ: %d\n", control_summ(A, A_lenth));
-	printf("Series: %d\n", control_series(A, A_lenth));
-	printf("\n");
+	// select_sort(A, A_lenth, M, C);
+	// printf("Sorted array:");
+	// array_print(A, A_lenth);
+	// printf("Control summ: %d\n", control_summ(A, A_lenth));
+	// printf("Series: %d\n", control_series(A, A_lenth));
+	// printf("\n");
 
-	printf("Theory M: %d, C: %.0f\n", (3 * (A_lenth - 1)), (( pow(A_lenth, 2) - A_lenth) / 2));
-	printf("My M: %d, C: %d\n", *M, *C);
-	*M = 0; *C = 0;
-	printf("\n");
-	printf("------------------------------------------------------");
-	printf("\n");
-
-
-
-	array_descending(A, A_lenth);
-	printf("Descending array:");
-	array_print(A, A_lenth);
-	printf("Control summ: %d\n", control_summ(A, A_lenth));
-	printf("Series: %d\n", control_series(A, A_lenth));
-	printf("\n");
-
-	select_sort(A, A_lenth, M, C);
-	printf("Sorted array:");
-	array_print(A, A_lenth);
-	printf("Control summ: %d\n", control_summ(A, A_lenth));
-	printf("Series: %d\n", control_series(A, A_lenth));
-	printf("\n");
-
-	printf("Theory M: %d, C: %.0f\n", (3 * (A_lenth - 1)), (( pow(A_lenth, 2) - A_lenth) / 2));
-	printf("My M: %d, C: %d\n", *M, *C);
-	*M = 0; *C = 0;
-	printf("\n");
-	printf("------------------------------------------------------");
-	printf("\n");
+	// printf("Theory M: %d, C: %.0f\n", (3 * (A_lenth - 1)), (( pow(A_lenth, 2) - A_lenth) / 2));
+	// printf("My M: %d, C: %d\n", *M, *C);
+	// *M = 0; *C = 0;
+	// printf("\n");
+	// printf("------------------------------------------------------");
+	// printf("\n");
 
 
 
-	array_growing(A, A_lenth);
-	printf("Growing array:");
-	array_print(A, A_lenth);
-	printf("Control summ: %d\n", control_summ(A, A_lenth));
-	printf("Series: %d\n", control_series(A, A_lenth));
-	printf("\n");
+	// array_growing(A, A_lenth);
+	// printf("Growing array:");
+	// array_print(A, A_lenth);
+	// printf("Control summ: %d\n", control_summ(A, A_lenth));
+	// printf("Series: %d\n", control_series(A, A_lenth));
+	// printf("\n");
 
-	select_sort(A, A_lenth, M, C);
-	printf("Sorted array:");
-	array_print(A, A_lenth);
-	printf("Control summ: %d\n", control_summ(A, A_lenth));
-	printf("Series: %d\n", control_series(A, A_lenth));
-	printf("\n");
+	// select_sort(A, A_lenth, M, C);
+	// printf("Sorted array:");
+	// array_print(A, A_lenth);
+	// printf("Control summ: %d\n", control_summ(A, A_lenth));
+	// printf("Series: %d\n", control_series(A, A_lenth));
+	// printf("\n");
 
-	printf("Theory M: %d, C: %.0f\n", (3 * (A_lenth - 1)), (( pow(A_lenth, 2) - A_lenth) / 2));
-	printf("My M: %d, C: %d\n", *M, *C);
-	*M = 0; *C = 0;
-	printf("\n");
-	printf("------------------------------------------------------");
-	printf("\n");
+	// printf("Theory M: %d, C: %.0f\n", (3 * (A_lenth - 1)), (( pow(A_lenth, 2) - A_lenth) / 2));
+	// printf("My M: %d, C: %d\n", *M, *C);
+	// *M = 0; *C = 0;
+	// printf("\n");
+	// printf("------------------------------------------------------");
+	// printf("\n");
+
+
+
+//BUBBLE SORT
+
+	// array_input(A, A_lenth);
+	// printf("Start array:");
+	// array_print(A, A_lenth);
+	// printf("Control summ: %d\n", control_summ(A, A_lenth));
+	// printf("Series: %d\n", control_series(A, A_lenth));
+	// printf("\n");
+
+	// bubble_sort(A, A_lenth, M, C);
+	// printf("Sorted array:");
+	// array_print(A, A_lenth);
+	// printf("Control summ: %d\n", control_summ(A, A_lenth));
+	// printf("Series: %d\n", control_series(A, A_lenth));
+	// printf("\n");
+
+	// printf("Theory M-min: 0, M-max: %.0f, C: %.0f\n", (3 * ( pow(A_lenth, 2) - A_lenth) / 2), (( pow(A_lenth, 2) - A_lenth) / 2));
+	// printf("My M: %d, C: %d\n", *M, *C);
+	// *M = 0; *C = 0;
+	// printf("\n");
+	// printf("------------------------------------------------------");
+	// printf("\n");
+
+
+
+	// array_random(A, A_lenth);
+	// printf("Random array:");
+	// array_print(A, A_lenth);
+	// printf("Control summ: %d\n", control_summ(A, A_lenth));
+	// printf("Series: %d\n", control_series(A, A_lenth));
+	// printf("\n");
+
+	// bubble_sort(A, A_lenth, M, C);
+	// printf("Sorted array:");
+	// array_print(A, A_lenth);
+	// printf("Control summ: %d\n", control_summ(A, A_lenth));
+	// printf("Series: %d\n", control_series(A, A_lenth));
+	// printf("\n");
+
+	// printf("Theory M-min: 0, M-max: %.0f, C: %.0f\n", (3 * ( pow(A_lenth, 2) - A_lenth) / 2), (( pow(A_lenth, 2) - A_lenth) / 2));
+	// printf("My M: %d, C: %d\n", *M, *C);
+	// *M = 0; *C = 0;
+	// printf("\n");
+	// printf("------------------------------------------------------");
+	// printf("\n");
+
+
+
+	// array_descending(A, A_lenth);
+	// printf("Descending array:");
+	// array_print(A, A_lenth);
+	// printf("Control summ: %d\n", control_summ(A, A_lenth));
+	// printf("Series: %d\n", control_series(A, A_lenth));
+	// printf("\n");
+
+	// bubble_sort(A, A_lenth, M, C);
+	// printf("Sorted array:");
+	// array_print(A, A_lenth);
+	// printf("Control summ: %d\n", control_summ(A, A_lenth));
+	// printf("Series: %d\n", control_series(A, A_lenth));
+	// printf("\n");
+
+	// printf("Theory M-min: 0, M-max: %.0f, C: %.0f\n", (3 * ( pow(A_lenth, 2) - A_lenth) / 2), (( pow(A_lenth, 2) - A_lenth) / 2));
+	// printf("My M: %d, C: %d\n", *M, *C);
+	// *M = 0; *C = 0;
+	// printf("\n");
+	// printf("------------------------------------------------------");
+	// printf("\n");
+
+
+
+	// array_growing(A, A_lenth);
+	// printf("Growing array:");
+	// array_print(A, A_lenth);
+	// printf("Control summ: %d\n", control_summ(A, A_lenth));
+	// printf("Series: %d\n", control_series(A, A_lenth));
+	// printf("\n");
+
+	// bubble_sort(A, A_lenth, M, C);
+	// printf("Sorted array:");
+	// array_print(A, A_lenth);
+	// printf("Control summ: %d\n", control_summ(A, A_lenth));
+	// printf("Series: %d\n", control_series(A, A_lenth));
+	// printf("\n");
+
+	// printf("Theory M-min: 0, M-max: %.0f, C: %.0f\n", (3 * ( pow(A_lenth, 2) - A_lenth) / 2), (( pow(A_lenth, 2) - A_lenth) / 2));
+	// printf("My M: %d, C: %d\n", *M, *C);
+	// *M = 0; *C = 0;
+	// printf("\n");
+	// printf("------------------------------------------------------");
+	// printf("\n");
 
 
 
