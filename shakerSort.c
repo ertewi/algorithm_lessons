@@ -18,7 +18,7 @@ void shaker_sort(int *A, int n, int *M, int *C) {
 		L = k;
 		for(j = L; j <= R - 1; j++) {
 
-			C += 1;
+			*C += 1;
 			if(A[j] > A[j + 1]) {
 
 				swap(&A[j], &A[j + 1], M);
