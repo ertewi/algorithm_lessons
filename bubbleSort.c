@@ -1,4 +1,3 @@
-#include <stdio.h>
 void swap(int *a, int *b, int *M);
 
 void bubble_sort(int *A, int n, int *M, int *C) {
